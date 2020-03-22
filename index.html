@@ -352,5 +352,24 @@
 		painel_mostrar.seen = true
 		return painel_mostrar
 	}
+	function setarBv(){
+		var camadas = layer_estado.getSource().getFeatures()
+		for(camada in camadas){
+			var camada = camadas[camada]
+			if(camada.values_.loc_no == 'Boa Vista'){
+				feicao = camada.values_
+				painel = desativar('Cidades')
+				painel.cidade = feicao['loc_no']
+				painel.imagem = './media/' + feicao.imagem
+				painel_cidade.cidade_infectado = feicao.infectado
+				painel_cidade.cidade_suspeitos = feicao.suspeito
+				painel_cidade.cidade_mortos = feicao.morto
+				painel_cidade.cidade_curados = feicao.curado
+				painel_cidade.cidade_descartados = feicao.descartado
+				painel.medidas()
+			}
+		}
+	}
+	setarBv()
 </script>
 </html>
