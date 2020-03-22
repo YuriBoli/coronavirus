@@ -57,8 +57,8 @@
 				<div style="height: 17vh; position: relative; display: block;">
 					<div style="width: 100%; height: 70%; display: inline-flex;padding-top: 1%; margin-top: 0; font-size: 2.5vh;">
 						<div style="width: 50%; height: 100%; border-left: 1px solid white; color:white;">
-							<p  style="margin: 0; ">suspeitos⚠ [[cidade_suspeitos]]</p>
-							<div class='graph' v-bind:style='porcentagem.suspeitos'></div>
+							<!--<p  style="margin: 0; ">suspeitos⚠ [[cidade_suspeitos]]</p>
+							<div class='graph' v-bind:style='porcentagem.suspeitos'></div> -->
 							<p style="margin: 0; ">infectados ☣ [[cidade_infectado]]</p>
 							<div class='graph' v-bind:style="porcentagem.infectado"></div>
 							<p style="margin: 0; ">mortos ☠ [[cidade_mortos]]</p>
@@ -73,7 +73,7 @@
 					</div>
 					<div style="width: 100%; height:20%;display:flex; position: absolute;bottom: 0; margin: 0;">
 						<div class='graphG' v-bind:style="porcentagem.mortos"></div>
-						<div class='graphG' v-bind:style='porcentagem.suspeitos'></div>
+						<!--<div class='graphG' v-bind:style='porcentagem.suspeitos'></div>-->
 						<div class='graphG' v-bind:style="porcentagem.infectado"></div>
 						<div class='graphG' v-bind:style="porcentagem.curados"></div>
 						<div class='graphG' v-bind:style="porcentagem.descartados"></div>
@@ -284,7 +284,7 @@
 		},
 		methods:{
 			medidas: function(){
-				this.cidade_total = this.cidade_infectado+this.cidade_suspeitos+this.cidade_mortos+this.cidade_curados+this.cidade_descartados
+				this.cidade_total = this.cidade_infectado+this.cidade_mortos+this.cidade_curados+this.cidade_descartados
 				this.porcentagem.infectado = `width:${((this.cidade_infectado / this.cidade_total) * 100)|| 0}% ; background-color: #6b6b6b;`
 				this.porcentagem.suspeitos = `width:${((this.cidade_suspeitos / this.cidade_total) * 100)|| 0}%;  background-color: #7f0000;`
 				this.porcentagem.mortos =    `width:${((this.cidade_mortos / this.cidade_total) * 100)|| 0}% ; background-color: black;`
