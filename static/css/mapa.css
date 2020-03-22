@@ -1,6 +1,13 @@
 
  @media screen and (orientation:portrait) { #divs{display:none;} #landscape{width: 100vw; height: 100hv;} }
  @media screen and (orientation:landscape) { #landscape{display: none;}}
+.graphG{
+	height: 100%;
+}
+.graph{
+	margin: 0;
+	height: 5%;
+}
 .painels
 {	width: 46vw;
 	height: 23vh;
